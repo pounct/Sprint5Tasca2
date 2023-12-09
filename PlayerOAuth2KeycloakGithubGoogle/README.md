@@ -1,3 +1,4 @@
+```
 PS C:\tools\kc\keycloak-23.0.1\bin> .\kc.bat start-dev
 
 2023-12-09 22:17:39,847 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
@@ -21,6 +22,6 @@ Total change sets:          117
 2023-12-09 22:17:56,236 INFO  [io.quarkus] (main) Profile dev activated. 
 2023-12-09 22:17:56,236 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-h2, jdbc-mariadb, jdbc-mssql, jdbc-mysql, jdbc-oracle, jdbc-postgresql, keycloak, logging-gelf, micrometer, narayana-jta, reactive-routes, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-health, vertx]
 2023-12-09 22:17:56,241 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.
-
+```
 
 
