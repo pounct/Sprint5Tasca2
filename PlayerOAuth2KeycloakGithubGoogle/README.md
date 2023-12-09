@@ -23,7 +23,7 @@ Total change sets:          117
 2023-12-09 22:17:56,236 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-h2, jdbc-mariadb, jdbc-mssql, jdbc-mysql, jdbc-oracle, jdbc-postgresql, keycloak, logging-gelf, micrometer, narayana-jta, reactive-routes, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-health, vertx]
 2023-12-09 22:17:56,241 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.
 ```
-# Wthi MariaDB SQL
+# With MariaDB SQL
 ```
 Updating the configuration and installing your custom providers, if any. Please wait.
 2023-12-10 00:03:03,255 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 8771ms
