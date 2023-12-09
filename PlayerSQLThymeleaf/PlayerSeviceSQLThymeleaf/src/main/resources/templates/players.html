@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Players</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" th:href=@{../css/bootstrap.min.css} />
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href=@{../css/style.css} />
+
+</head>
+
+<body>
+
+	<div layout:fragment="content1">
+		<section class="container">
+			<form th:action="@{players}" method="get">
+				<label for="sucsearch">Keyword: </label>
+				<input type="search" id="sucsearch" name="kw" th:value="${kw}" />
+				<button class="btn btn-primary">Search</button>
+			</form>
+			<div>
+				<label >Percentatge Mitja : </label>
+				<input type="search" id="percentatgeMitja" name="percentatgeMitja" th:value="${percentatgeMitja}" style="background-color: black; color: rgb(128, 255, 128);" disabled />
+				<label >Percentatge Mitja Mitjor: </label>
+				<input type="search" id="percentatgeMitjaMitjor" name="percentatgeMitjaMitjor" th:value="${percentatgeMitjaMitjor}" style="background-color: black; color: rgb(128, 255, 128);" disabled />
+				<label >Percentatge Mitja Pitjor: </label>
+				<input type="search" id="percentatgeMitjaPitjor" name="percentatgeMitjaPitjor" th:value="${percentatgeMitjaPitjor}" style="background-color: black; color: rgb(128, 255, 128);" disabled />
+			</div>
+				
+		</section>
+		<section class="container">
+			<h3>Players</h3>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Username</th>
+						<th>SuccessPercentage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each=s:${listPlayers}>
+						<td th:text=${s.id}></td>
+						<td th:text=${s.username}></td>
+						<td th:text=${s.percentatgedExit}></td>
+						<td><a type="button" class="btn btn-danger" onclick="return confirm('estàs segur')"
+								th:href=@{deletePlayer(id=${s.id},page=${currentPage},size=${size},kw=${kw})}>ELIMINAR
+							</a>
+						</td>
+						<td><a type="button" class="btn btn-info" th:href=@{updatePlayer(id=${s.id})}>EDITAR</a></td>
+						
+						<td><a type="button" class="btn btn-success" th:href=@{getPlayer(id=${s.id},page=${currentPage},size=${size})}>PLAYER</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<nav class="navbar navbar-expand-sm bg-light">
+			<ul class="nav nav-pills">
+				<li class=class="nav-item" th:each=pa,status:${pages}>
+					<a th:class="${currentPage}==${status.index}?'nav-link active':'nav-link'"
+						th:href=@{players(page=${status.index},size=${size},kw=${kw})} th:text=${status.index}></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Players</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" th:href=@{../css/bootstrap.min.css} />
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href=@{../css/style.css} />
+
+</head>
+
+<body>
+	<div layout:fragment="content1">
+		<div class="container">
+			<div class="card">
+				<div class="card-header">Confirmacio : Player guardado</div>
+				<div class="card-body">
+					<div class="form-group">
+						<label>ID : </label>
+						<label th:text="${player.id}"></label>
+					</div>
+					<div class="form-group">
+						<label>USERNAME : </label>
+						<label th:text="${player.username}"></label>
+					</div>
+					<div class="form-group">
+						<label>PERCENTAGE : </label>
+						<label th:text="${player.percentatgedExit}"></label> <!--successesAveragePercentage-->
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Players</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" th:href=@{../css/bootstrap.min.css} />
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href=@{../css/style.css} />
+
+</head>
+
+<body>
+	<div layout:fragment="content1">
+		<section class="container">			
+			<a type="button" class="btn btn-info" th:href=@{playGames(id=${player.id},page=${currentPage},size=${size})}>PLAY</a>
+			<a type="button" class="btn btn-danger" onclick="return confirm('estàs segur')" th:href=@{deleteGames(id=${id})}>RESET</a>
+			
+			<label>Percentatge d'Exit: </label>
+			<input type="search" id="percentatgedExit" name="percentatgedExit" th:value="${player.percentatgedExit}" style="background-color: black; color: rgb(128, 255, 128);" disabled />
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Dice1</th>
+						<th>Dice2</th>
+						<th>Guanyat</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each=g:${playerGames}>
+						<td th:text=${g.id}></td>
+						<td th:text=${g.dice1}></td>
+						<td th:text=${g.dice2}></td>
+						<td th:text=${g.won}></td>
+						<!--<td><a type="button" class="btn btn-danger" onclick="return confirm('estàs segur')"
+								th:href=@{delete(id=${s.id},page=${currentPage},size=${size},kw=${kw})}>ELIMINAR
+							</a>
+						</td>
+						<td><a type="button" class="btn btn-info" th:href=@{updatePlayer(id=${s.id})}>EDITAR</a></td>
+						<td><a type="button" class="btn btn-success" th:href=@{getPlayer(id=${s.id},page=${currentPage},size=${size})}>PLAYER</a></td>-->
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<nav class="navbar navbar-expand-sm bg-light">
+			<ul class="nav nav-pills">
+				<li class=class="nav-item" th:each=pa,status:${pages}>
+					<a th:class="${currentPage}==${status.index}?'nav-link active':'nav-link'"
+						th:href=@{getPlayer(id=${player.id},page=${status.index},size=${size})} th:text=${status.index}></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

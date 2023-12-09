@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Update Player</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" th:href=@{../css/bootstrap.min.css} />
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href=@{../css/style.css} />
+</head>
+
+<body>
+	<div layout:fragment="content1">
+		<div class="col-md-6 col-xs-12 espaciotop">
+			<div class="card">
+				<div class="card-header ">Edit Player : </div>
+				<div class="card-body">
+					<form th:action=@{savePlayer} method="post">
+						<div class="form-group">
+							<label class="control-label">ID :</label>
+							<label class="control-label">Username :</label>
+							<input class="form-control" type="text" name="username" th:value=${player.username} />
+							<label class="control-label">% :</label>
+							<span class="rojo" th:errors=${player.username}></span>
+							<!--<span class="rojo" th:errors=${err}></span>-->
+						</div>
+						<div>
+							<button type="submit" class="btn btn-primary">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
