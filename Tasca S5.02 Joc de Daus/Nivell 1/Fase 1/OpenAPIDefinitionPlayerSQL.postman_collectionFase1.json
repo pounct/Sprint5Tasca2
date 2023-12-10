@@ -1,0 +1,715 @@
+{
+	"info": {
+		"_postman_id": "27fc1763-ed28-4521-bf34-b3adb87731be",
+		"name": "OpenAPIDefinitionPlayerSQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13383549"
+	},
+	"item": [
+		{
+			"name": "players",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "games",
+							"item": [
+								{
+									"name": "get Player Games",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/players/:id/games",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"players",
+												":id",
+												"games"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/players/:id/games",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"players",
+														":id",
+														"games"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"dice1\": \"<string>\",\n    \"dice2\": \"<string>\",\n    \"won\": \"<boolean>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"dice1\": \"<string>\",\n    \"dice2\": \"<string>\",\n    \"won\": \"<boolean>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "play Game",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/players/:id/games",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"players",
+												":id",
+												"games"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/players/:id/games",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"players",
+														":id",
+														"games"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"dice1\": \"<string>\",\n  \"dice2\": \"<string>\",\n  \"won\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "delete All Games",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/players/:id/games",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"players",
+												":id",
+												"games"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/players/:id/games",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"players",
+														":id",
+														"games"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"registrationDate\": \"<dateTime>\",\n  \"percentatgedExit\": \"<float>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ranking",
+					"item": [
+						{
+							"name": "winner",
+							"item": [
+								{
+									"name": "get Percentatge Mitja Mitjor",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/players/ranking/winner",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"players",
+												"ranking",
+												"winner"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/players/ranking/winner",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"players",
+														"ranking",
+														"winner"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "<float>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "loser",
+							"item": [
+								{
+									"name": "get Percentatge Mitja Pitjor",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/players/ranking/loser",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"players",
+												"ranking",
+												"loser"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/players/ranking/loser",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"players",
+														"ranking",
+														"loser"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "<float>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get Percentatge Mitja",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/players/ranking",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"players",
+										"ranking"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/players/ranking",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"players",
+												"ranking"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<float>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All Players",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/players",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"registrationDate\": \"<dateTime>\",\n    \"percentatgedExit\": \"<float>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"registrationDate\": \"<dateTime>\",\n    \"percentatgedExit\": \"<float>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "update Player",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nom\": \"<string>\",\n  \"playerDTO\": {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"registrationDate\": \"<dateTime>\",\n    \"percentatgedExit\": \"<float>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/players",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nom\": \"<string>\",\n  \"playerDTO\": {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"registrationDate\": \"<dateTime>\",\n    \"percentatgedExit\": \"<float>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"registrationDate\": \"<dateTime>\",\n  \"percentatgedExit\": \"<float>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add Player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"registrationDate\": \"<dateTime>\",\n  \"percentatgedExit\": \"<float>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/players",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"registrationDate\": \"<dateTime>\",\n  \"percentatgedExit\": \"<float>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"registrationDate\": \"<dateTime>\",\n  \"percentatgedExit\": \"<float>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "myConfig",
+			"item": [
+				{
+					"name": "my Config",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/myConfig",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"myConfig"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/myConfig",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"myConfig"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"inc\": {},\n  \"aliquip_9\": {},\n  \"ullamco08\": {}\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9000"
+		}
+	]
+}
