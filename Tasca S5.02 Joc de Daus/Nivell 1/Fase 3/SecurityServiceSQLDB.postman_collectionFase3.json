@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "3d0b9745-26bc-4fea-970c-46fe559751e5",
+		"name": "SecurityServiceSQLDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13383549"
+	},
+	"item": [
+		{
+			"name": "testRestApi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/test/RestApi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"test",
+						"RestApi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testUserDada",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MDIyMzk2ODMsImlhdCI6MTcwMjIzOTM4Mywic2NvcGUiOiJVU0VSIn0.FwcpDb7QlMdkWWYzFk1VO3mtlvPA_jRsOZO-vfo1RRWVUGimgkqV_NLT_9zh5FpkTgGW9P2CYaxKwtjr-G78kNxxsVGI59E4uP2953snFz-MqNh9WiJz4r7mgYDSfTHl7x1QK17pDBsfAtESoeYeBejWzLaFMWtBxgJMpAP4RoaCMGiKdaZV0z-wMguMMymAfjAgUT2kP8eMn9HEjSK2gNH6l9OXxydUyZIwleGYTjefT80he_4W642V1tY6p2AlYmFG5xWL2rdXtx2-SStyyh4rnrgxRFi_p9AsCfCmZR9mjPQHcwzyl5eUnAEXIet_jVPk1JrzJOcM3OsHIn5KMA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/test/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"test",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testAdminSaveData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoiYWRtaW4iLCJleHAiOjE3MDA5NTgxNjUsImlhdCI6MTcwMDk1Nzg2NSwic2NvcGUiOiJBRE1JTiBVU0VSIn0.EAqDdKvzkLDj98l87fOFxLapLeihjSAx35wnYRIXsUxJHEjswcqnFPbhaf7bcdnYkOxgxhVmsKttYuQjl-SO_o0TJCxcOxzJwhHi0tLRNA4XRuDlVwBcOakMHc9qJmkoweEakGX00a_juGPCQoxY3hUxmYQcy_YCSc3lBdZTkB0r84jRcElpVwacdpi22_7yBlJ_vlIqnofuu_yFyDXRBvNFjHodvSCQG3eWZkK8N8KUhVZ0li7w5LD96y-05V26PWR2MoHPycMofWclClhP28b9KlyClq4u_SBhGSehrHTqXA2Fo2SjHhjJjyO6g_z3TibdkUk6lVxScTAVGg6S8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "dada",
+							"value": "DadaAGuardar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/test/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"test",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testGetProfile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoidXNlcjEiLCJleHAiOjE3MDA5MzIzNDUsImlhdCI6MTcwMDkzMjA0NSwic2NvcGUiOiJVU0VSIn0.mJ9NQ7WiJZ4bTHkvojcHpzryFsgEpqzEjmQ1an_9_JNYYic-Zn4dDGjcXxwjN498fT_cbVWmNggFEDUS49C9UTMhLt6nkfMIP5N9nDNaoxMc7rHDN0RJunYXZ5QE8QJxo5fTBM3KciT8DhHdAYH3usX7EB1uOavBZtwnAlXG3qVruzreE5nnaen8tI9Xt2GkA7CDTtJQyrUc2JYvFzooWSwJGB3OyW0p_mbJjUJPpk9FA_eeThXhOfmRHoh5UZZi4bL-Y6mnIthYGvmEn3Nv-fO1qjBRcAvTWnNPKnAL5a2U_mWDaLBqOS4DfK50ymOtKQc9U1uXOCnYUqB-iawFdA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9090/test/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"test",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getADMINTokenWithPWAuthGTpsssword",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "ambRefreshToken",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "grantType",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "refreshToken",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerUser",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"fethi2\",\r\n    \"password\":\"1234\",\r\n    \"confirmedPassword\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"fethi2\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUSERTokenWithPWAuthGTpsssword",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "ambRefreshToken",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "grantType",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "refreshToken",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTokenWithRefreshTokenGTrefreshToken",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ambRefreshToken",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "grantType",
+							"value": "refreshToken",
+							"type": "text"
+						},
+						{
+							"key": "refreshToken",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eS1zZXJ2aWNlIiwic3ViIjoiYWRtaW4iLCJleHAiOjE3MDA5NTk2NjUsImlhdCI6MTcwMDk1Nzg2NX0.Oj1lH4wWwDTPaulQT9gFsM9PAJMXSjva5cupeeQeRTRqmksKy_QQWT9DzF_igfx5GjuMJH8KkYe_vmLTMpo0Xn_-qP0RzdvsmHseOSdnp7t6bhHxqPKGjmeQNiiY0il9nADt0xH050kfj6j4eRdK-lzLGndn-aup7B3Vlgeg1jIdeJ8JcZkWnQHQebrNvUT9rbn53PJekOIWAyXU30AHcQW5rOuT16dBRsmzv6pHx3TtKCa_XYzb6HZe7qZyzEC5_yxaJsFPfbLe0qFBvc-uQP4aJ7kMXj0-adTzqH09KBp5rEeqHMULA2GpKBTM-YDvvoy0_iNYr25yURrqiQW6_Q",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
