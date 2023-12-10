@@ -17,10 +17,10 @@
 				<div class="card-body">
 					<form th:action=@{savePlayer} method="post">
 						<div class="form-group">
-							<label class="control-label">ID :</label>
+							<!--<label class="control-label">ID :</label>-->
 							<label class="control-label">Username :</label>
 							<input class="form-control" type="text" name="username" th:value=${player.username} />
-							<label class="control-label">% :</label>
+							<!--<label class="control-label">% :</label>-->
 							<span class="rojo" th:errors=${player.username}></span>
 							<!--<span class="rojo" th:errors=${err}></span>-->
 						</div>

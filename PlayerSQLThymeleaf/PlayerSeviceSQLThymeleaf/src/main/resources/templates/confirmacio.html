@@ -14,7 +14,7 @@
 	<div layout:fragment="content1">
 		<div class="container">
 			<div class="card">
-				<div class="card-header">Confirmacio : Player guardado</div>
+				<div class="card-header">Player saved.</div>
 				<div class="card-body">
 					<div class="form-group">
 						<label>ID : </label>
@@ -25,7 +25,11 @@
 						<label th:text="${player.username}"></label>
 					</div>
 					<div class="form-group">
-						<label>PERCENTAGE : </label>
+						<label>Registration Date : </label>
+						<label th:text="${player.registrationDate}"></label> <!--successesAveragePercentage-->
+					</div>
+					<div class="form-group">
+						<label>Percentage : </label>
 						<label th:text="${player.percentatgedExit}"></label> <!--successesAveragePercentage-->
 					</div>
 

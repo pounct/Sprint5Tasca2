@@ -13,7 +13,7 @@
 	<div layout:fragment="content1">
 		<section class="container">			
 			<a type="button" class="btn btn-info" th:href=@{playGames(id=${player.id},page=${currentPage},size=${size})}>PLAY</a>
-			<a type="button" class="btn btn-danger" onclick="return confirm('estàs segur')" th:href=@{deleteGames(id=${id})}>RESET</a>
+			<a type="button" class="btn btn-danger" onclick="return confirm('estàs segur')" th:href=@{deleteGames(id=${player.id},page=${currentPage},size=${size})}>RESET</a>
 			
 			<label>Percentatge d'Exit: </label>
 			<input type="search" id="percentatgedExit" name="percentatgedExit" th:value="${player.percentatgedExit}" style="background-color: black; color: rgb(128, 255, 128);" disabled />

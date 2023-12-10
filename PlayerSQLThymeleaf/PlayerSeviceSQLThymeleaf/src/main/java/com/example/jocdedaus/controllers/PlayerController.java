@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -82,11 +81,11 @@ public class PlayerController {
     	if(bindingResult.hasErrors()){
             return "formEditPlayer";
         }
-    	String err = "";    	
+    	//String err = "";    	
     	String username = player.getUsername();
 		List<String> usernames = playerService.getUsernames();
 		if (usernames.contains(username) && (!username.contains("ANONIMOUS"))) {
-			err = "username already exist!!";
+			//err = "username already exist!!";
 			return "redirect:/web/addPlayer";
 		}
 		if (username == null || "".equals(username)) {
@@ -95,6 +94,7 @@ public class PlayerController {
 		}
 		player.setRegistrationDate(LocalDateTime.now());
 		PlayerDTO playerDTOResult = playerService.addPlayer(player);
+		playerDTOResult.setPercentatgedExit(playerService.getPercentatge(player.getId()));
 		model.addAttribute("player",playerDTOResult);
 		
 		return "confirmacio";
@@ -192,12 +192,13 @@ public class PlayerController {
 			@RequestParam(name = "page", defaultValue = "0") int p,
 			@RequestParam(name = "size", defaultValue = "4") int s
                         ){
+    	PlayerDTO player = playerService.getPlayerDTO(id);
     	playerService.deletePlayerGames(id);
         Page<GameDTO> gamesPlayers=playerService.searchGames(id,p,s);
         model.addAttribute("playerGames",gamesPlayers);
         model.addAttribute("pages",new int[gamesPlayers.getTotalPages()]);
         model.addAttribute("currentPage",p);
-        model.addAttribute("id",id);
+        model.addAttribute("player",player);
         return "playerGames";
     }
 }
