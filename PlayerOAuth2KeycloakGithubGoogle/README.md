@@ -60,7 +60,8 @@ Total change sets:          117
 2023-12-10 00:04:36,914 INFO  [org.keycloak.services] (executor-thread-6) KC-SERVICES0009: Added user 'fethi' to realm 'master'
 2023-12-10 00:04:36,915 INFO  [org.keycloak.services] (executor-thread-6) KC-SERVICES0077: Created initial admin user with username fethi
 ```
-# The database vendor.
+# The database vendor with xampp
+- create a dadtbase : keycloak
 ```
 db=mariadb
 ```
