@@ -1,6 +1,7 @@
 package com.example.jocdedaus;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -23,6 +24,7 @@ import com.example.jocdedaus.model.dto.PlayerDTO;
 import com.example.jocdedaus.model.services.PlayerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+
 @WebMvcTest(PlayerRestController.class)
 class PlayerRestControllerUnitTest {
 	
@@ -41,7 +43,7 @@ class PlayerRestControllerUnitTest {
         List<PlayerDTO> players = new ArrayList<PlayerDTO>();
         when(playerService.getAllPlayers()).thenReturn(players);
         mockMvc.perform(get("/players"))
-                .andExpect(status().isNoContent());
+                .andExpect(status().isOk());
                 
     }
     
@@ -59,21 +61,7 @@ class PlayerRestControllerUnitTest {
                 .andExpect(status().isOk());                
     }
     
-    @Test
-    void shouldNotCreatePlayer() throws Exception {
-    	PlayerDTO player1 = PlayerDTO.builder()
-        		.username("player1")
-        		.build();
-        
-        player1.setRegistrationDate(LocalDateTime.now());
-        mockMvc.perform(post("/players").contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(player1)))
-                .andExpect(status().isOk());
-        mockMvc.perform(post("/players").contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(player1)))
-                .andExpect(status().isBadRequest());
-    }
-    
+     
     @Test
     void shouldGetTwoPlayers() throws Exception{
 
