@@ -137,7 +137,7 @@ public class PlayerService {
 	//@Override
 	public Float getPercentatgeMitjaPitjor() {
 		List<Player> players = playerRepository.findAll();
-		float min = 0;
+		float min = 100;
 		for (Player p : players) {
 			Float percent = getPercentatge(p.getId());
 			if (min > percent) {
