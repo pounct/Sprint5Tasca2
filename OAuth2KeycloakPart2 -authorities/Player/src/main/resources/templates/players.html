@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template">
+    <head>
+        <title>Players</title>
+    </head>
+    <body>
+    <div layout:fragment="content">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>USERNAME</th>
+                <th>EMAIL</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each=p:${players}>
+                <td th:text=${p.id}></td>
+                <td th:text=${p.username}></td>
+                <td th:text=${p.email}></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>
